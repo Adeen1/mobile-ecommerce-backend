@@ -16,6 +16,6 @@ console.log(process.env.uri);
 //connecting mongo db
 
 mongoose.connect(mongo_pass);
-app.listen(5000, () => {
+app.listen(8080, "0.0.0.0", () => {
   console.log("app is listening on port 5000");
 });
