@@ -5,7 +5,15 @@ const router = require("./api");
 var bodyParser = require("body-parser");
 const app = express();
 const cors = require("cors");
+const path = require("path");
 const mongo_pass = process.env.uri;
+
+app.use(express.static(path.join(__dirname, "build")));
+
+// Route all requests to index.html
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
 
 //  adding router
 app.use(bodyParser.urlencoded({ extended: false }));
