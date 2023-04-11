@@ -8,9 +8,6 @@ const {
   messageModal,
   allUserModal,
 } = require("./schema");
-const fileupload = require("express-fileupload");
-const multer = require("multer");
-const path = require("path");
 router.get("/home", (req, res) => {
   res.send("home");
 });
@@ -212,4 +209,5 @@ router.post("/api/chat/getMessage/:id", async (req, res) => {
     res.status(500).send(error);
   }
 });
+
 module.exports = router;
